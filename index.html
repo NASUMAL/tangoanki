@@ -70,7 +70,7 @@
   <button id="toggleEditAreaBtn" onclick="toggleEditArea()">単語リストと追加フォームを表示</button>
 
   <div id="edit-area">
-    <textarea id="bulkInput" rows="6" cols="60" placeholder="タイ語,日本語, を入力&#10;例）กิน,食べる ฉันกินข้าว,毎日"></textarea><br>
+    <textarea id="bulkInput" rows="6" cols="60" placeholder="タイ語,日本語,例文 を改行で入力&#10;例）กิน,食べる,ฉันกินข้าว毎日"></textarea><br>
     <button onclick="addWords()">単語を追加</button>
     <button onclick="shareURL()">URLを作る</button><br>
     <input type="text" id="shareURL" readonly style="width:90%" onclick="this.select()" placeholder="ここにURLが表示されます"><br><br>
@@ -262,7 +262,7 @@
 
         let wrongSummary = everWrongIndices.map(i => {
           const w = originalVocab[i];
-          return `・${w.thai} - ${w.japanese}`;
+          return `${w.thai}, ${w.japanese}`;
         }).join("<br>");
 
         document.getElementById("result").innerHTML =
@@ -387,3 +387,5 @@
   </script>
 </body>
 </html>
+
+
